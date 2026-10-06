@@ -1,0 +1,75 @@
+
+Welcome to Virtual PC Simulator, version 0.8.3
+Dedicated to Daling.
+Build time: Sep  9 2023 11:15:00
+Copyright (c) 2007-2015, Paul Meng (mirnshi@gmail.com)
+All rights reserved.
+
+VPCS is free software, distributed under the terms of the "BSD" licence.
+Source code and license can be found at vpcs.sf.net.
+For more information, please visit wiki.freecode.com.cn.
+
+Press '?' to get help.
+
+Executing the startup file
+
+
+PC2> ip 192.168.60.5/24 192.168.60.4
+Checking for duplicate address...
+PC2 : 192.168.60.5 255.255.255.0 gateway 192.168.60.4
+
+PC2> ping 192.168.60.4
+
+host (192.168.60.4) not reachable
+
+PC2> ping 192.168.60.4
+
+84 bytes from 192.168.60.4 icmp_seq=1 ttl=255 time=6.758 ms
+84 bytes from 192.168.60.4 icmp_seq=2 ttl=255 time=3.772 ms
+84 bytes from 192.168.60.4 icmp_seq=3 ttl=255 time=5.603 ms
+^C
+PC2> ping 192.168.10.5
+
+84 bytes from 192.168.10.5 icmp_seq=1 ttl=61 time=39.948 ms
+84 bytes from 192.168.10.5 icmp_seq=2 ttl=61 time=25.293 ms
+84 bytes from 192.168.10.5 icmp_seq=3 ttl=61 time=38.824 ms
+84 bytes from 192.168.10.5 icmp_seq=4 ttl=61 time=28.258 ms
+84 bytes from 192.168.10.5 icmp_seq=5 ttl=61 time=40.170 ms
+^C
+PC2> ping 192.168.10.1
+
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=253 time=38.053 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=253 time=20.302 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=253 time=24.799 ms
+84 bytes from 192.168.10.1 icmp_seq=4 ttl=253 time=44.474 ms
+84 bytes from 192.168.10.1 icmp_seq=5 ttl=253 time=18.366 ms
+^C
+PC2> ping 192.168.10.1
+
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=253 time=25.815 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=253 time=56.050 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=253 time=17.016 ms
+84 bytes from 192.168.10.1 icmp_seq=4 ttl=253 time=30.972 ms
+84 bytes from 192.168.10.1 icmp_seq=5 ttl=253 time=25.430 ms
+
+PC2> ping 192.168.10.1
+
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=253 time=44.104 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=253 time=30.157 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=253 time=44.642 ms
+^C
+PC2> ping 192.168.10.5
+
+84 bytes from 192.168.10.5 icmp_seq=1 ttl=61 time=73.012 ms
+84 bytes from 192.168.10.5 icmp_seq=2 ttl=61 time=33.466 ms
+^C
+PC2> ping 192.168.10.5
+
+84 bytes from 192.168.10.5 icmp_seq=1 ttl=61 time=37.914 ms
+84 bytes from 192.168.10.5 icmp_seq=2 ttl=61 time=36.600 ms
+^C
+PC2> ping 192.168.10.1
+
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=253 time=29.630 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=253 time=29.176 ms
+^C

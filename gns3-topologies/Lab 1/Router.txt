@@ -1,0 +1,121 @@
+Router>
+Router>en
+Router#sh run
+Building configuration...
+
+Current configuration : 3414 bytes
+!
+version 15.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+ip dhcp excluded-address 10.0.0.254
+ip dhcp excluded-address 172.16.0.254
+ip dhcp excluded-address 192.168.0.254
+!
+ip dhcp pool POOL-10
+ network 10.0.0.0 255.0.0.0
+ default-router 10.0.0.254
+ dns-server 8.8.8.8
+!
+ip dhcp pool POOL-172
+ network 172.16.0.0 255.255.0.0
+ default-router 172.16.0.254
+ dns-server 8.8.8.8
+!
+ip dhcp pool POOL-192
+ network 192.168.0.0 255.255.255.0
+ default-router 192.168.0.254
+ dns-server 8.8.8.8
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description #LAN Class A#
+ ip address 10.0.0.254 255.0.0.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ description #LAN Class C#
+ ip address 192.168.0.254 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ description #LAN Class B#
+ ip address 172.16.0.254 255.255.0.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ipv6 ioam timestamp
+!
+!
+!
+control-plane
+!

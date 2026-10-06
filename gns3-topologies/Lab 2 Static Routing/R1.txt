@@ -1,0 +1,317 @@
+*******************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+Router>
+Router>
+*Oct  5 13:49:05.095: %SYS-3-CPUHOG: Task is running for (1999)msecs, more than (2000)msecs (0/0),process = Crypto CA.
+*Oct  5 13:49:06.937: %PNP-6-PNP_TECH_SUMMARY_SAVED_OK: PnP tech summary (/pnp-tech/pnp-tech-discovery-summary) saved successfully (elapsed time: 22 seconds).
+*Oct  5 13:49:06.938: %PNP-6-PNP_DISCOVERY_STOPPED: PnP Discovery stopped (Config Wizard)
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#do sh ip int br
+Interface                  IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  administratively down down
+GigabitEthernet0/2         unassigned      YES unset  administratively down down
+GigabitEthernet0/3         unassigned      YES unset  administratively down down
+GigabitEthernet0/4         unassigned      YES unset  administratively down down
+GigabitEthernet0/5         unassigned      YES unset  administratively down down
+Router(config)#int g0/0
+Router(config-if)#ip addr 192.168.10.1 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#
+*Oct  5 13:51:08.250: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Oct  5 13:51:09.291: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+Router(config-if)#desc
+Router(config-if)#description Link to Switch 1 and End Host
+Router(config-if)#int g0/1
+Router(config-if)#ip addr 192.168.20.1 255.255.255.0
+Router(config-if)#descr
+Router(config-if)#description Link to R2
+Router(config-if)#no shut
+Router(config-if)#
+*Oct  5 13:52:28.874: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+*Oct  5 13:52:29.912: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to upint
+% Incomplete command.
+
+Router(config)#int g0/2
+Router(config-if)#ip addr 192.168.30.1 255.255.255.0
+Router(config-if)#desc
+Router(config-if)#description Link to R3
+Router(config-if)#no shut
+Router(config-if)#
+*Oct  5 13:53:15.970: %PLATFORM-5-SIGNATURE_VERIFIED: Image 'flash0:/vios-adventerprisek9-m' passed code signing verification
+*Oct  5 13:53:16.012: %LINK-3-UPDOWN: Interface GigabitEthernet0/2, changed state to up
+*Oct  5 13:53:17.014: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+Router(config-if)#do wr
+Building configuration...
+[OK]
+Router(config-if)#
+Router(config-if)#
+*Oct  5 13:53:39.547: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
+*Oct  5 13:53:40.694: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully.
+Router(config-if)#do sh ip int br
+Interface                  IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0         192.168.10.1    YES manual up                    up
+GigabitEthernet0/1         192.168.20.1    YES manual up                    up
+GigabitEthernet0/2         192.168.30.1    YES manual up                    up
+GigabitEthernet0/3         unassigned      YES unset  administratively down down
+GigabitEthernet0/4         unassigned      YES unset  administratively down down
+GigabitEthernet0/5         unassigned      YES unset  administratively down down
+Router(config-if)#int range g0/3-5
+Router(config-if-range)#desc
+Router(config-if-range)#description Not In Use
+Router(config-if-range)#shutdown
+Router(config-if-range)#disable
+                         ^
+% Invalid input detected at '^' marker.
+
+Router(config-if-range)#do sh ip int br
+Interface                  IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0         192.168.10.1    YES manual up                    up
+GigabitEthernet0/1         192.168.20.1    YES manual up                    up
+GigabitEthernet0/2         192.168.30.1    YES manual up                    up
+GigabitEthernet0/3         unassigned      YES unset  administratively down down
+GigabitEthernet0/4         unassigned      YES unset  administratively down down
+GigabitEthernet0/5         unassigned      YES unset  administratively down down
+Router(config-if-range)#do sh int desc
+Router(config-if-range)#do sh int description
+Interface                      Status         Protocol Description
+Gi0/0                          up             up       Link to Switch 1 and End Host
+Gi0/1                          up             up       Link to R2
+Gi0/2                          up             up       Link to R3
+Gi0/3                          admin down     down     Not In Use
+Gi0/4                          admin down     down     Not In Use
+Gi0/5                          admin down     down     Not In Use
+Router(config-if-range)#
+Router(config-if-range)#do hostname R1
+                            ^
+% Invalid input detected at '^' marker.
+
+Router(config-if-range)#hostname R1
+R1(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+*Oct  5 14:13:31.452: %SYS-5-CONFIG_I: Configured from console by console
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+R1>
+R1>en
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip route 192.168.60.0 255.255.255.0 192.168.30.3
+R1(config)#exit
+R1#
+*Oct  5 14:51:26.750: %SYS-5-CONFIG_I: Configured from console by consoleping
+Protocol [ip]: exit
+% Unknown protocol - "exit", type "ping ?" for help
+R1#ping 192.168.60.0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.60.0, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#ping 192.168.60.0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.60.0, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.10.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.10.1/32 is directly connected, GigabitEthernet0/0
+      192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.20.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.20.1/32 is directly connected, GigabitEthernet0/1
+      192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.30.0/24 is directly connected, GigabitEthernet0/2
+L        192.168.30.1/32 is directly connected, GigabitEthernet0/2
+S     192.168.60.0/24 [1/0] via 192.168.30.3
+R1#ping 192.168.30.0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.30.0, timeout is 2 seconds:
+
+Reply to request 0 from 192.168.30.3, 18 ms
+Reply to request 1 from 192.168.30.3, 7 ms
+Reply to request 2 from 192.168.30.3, 3 ms
+Reply to request 3 from 192.168.30.3, 24 ms
+Reply to request 4 from 192.168.30.3, 10 ms
+R1#ping 192.168.30.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.30.3, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 5/14/28 ms
+R1#ping 192.168.60.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.60.4, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.10.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.10.1/32 is directly connected, GigabitEthernet0/0
+      192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.20.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.20.1/32 is directly connected, GigabitEthernet0/1
+      192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.30.0/24 is directly connected, GigabitEthernet0/2
+L        192.168.30.1/32 is directly connected, GigabitEthernet0/2
+S     192.168.60.0/24 [1/0] via 192.168.30.3
+R1#ping 192.168.30.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.30.3, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/11/15 ms
+R1#ping 192.168.60.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.60.4, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#ping 192.168.50.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.50.4, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#ping 192.168.50.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.50.3, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip route 192.168.50.0 255.255.255.0 192.168.30.3
+R1(config)#exit
+R1#sh
+*Oct  5 15:14:56.988: %SYS-5-CONFIG_I: Configured from console by consoleip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.10.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.10.1/32 is directly connected, GigabitEthernet0/0
+      192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.20.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.20.1/32 is directly connected, GigabitEthernet0/1
+      192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.30.0/24 is directly connected, GigabitEthernet0/2
+L        192.168.30.1/32 is directly connected, GigabitEthernet0/2
+S     192.168.50.0/24 [1/0] via 192.168.30.3
+S     192.168.60.0/24 [1/0] via 192.168.30.3
+R1#ping 192.168.50.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.50.3, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 3/6/17 ms
+R1#ping 192.168.50.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.50.4, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+R1#ping 192.168.50.0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.50.0, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 4/8/19 ms
+R1#ping 192.168.50.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.50.4, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/12/16 ms
+R1#ping 192.168.60.0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.60.0, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/12/17 ms
+R1#

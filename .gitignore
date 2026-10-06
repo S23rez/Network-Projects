@@ -1,3 +1,48 @@
-*.pcap
-*.bin
 .idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.iml
+*.ipr
+*.iws
+
+# --- Python & Virtual Environments ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- OS System Files ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Network Topologies & Large Binaries ---
+*.bin
+*.vmdk
+*.qcow2
+*.tmp
+
+# --- Packet Captures & Traffic Logs ---
+# Un-comment the line below if you want to ignore all Wireshark packet captures repo-wide:
+# *.pcap
+# *.pcapng
+# *.cap
+
+# --- Automated Outputs & Sensitive Data ---
+Sanitized_Uploads/
+*.har
